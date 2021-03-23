@@ -1,0 +1,17 @@
+<div [hidden]="!show.submitted">
+<div class="card" *ngFor="let p of products">
+    <img src="{{ p.imgUrl }}" alt="{{ p.name }}" style="width:100%">
+    <h1>{{ p.name }}</h1>
+    <p class="price">{{ p.price }}</p>
+    <p>{{ p.description }}</p>
+    <p><button (click)="addToCart(p.id); changeText()">{{ text }}</button></p>
+  </div>
+</div>
+
+  <form #show="ngForm">
+    <div class="ShowProduct">
+      <button class="btn btn-primary">
+        Show Products
+      </button>
+    </div>
+  </form>

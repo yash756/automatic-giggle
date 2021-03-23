@@ -1,0 +1,46 @@
+<div class="centerdiv">
+<form (ngSubmit)="add(regForm)" #regForm="ngForm">
+    <div class="form-group">
+        <label>Enter empno</label>
+        <input type="number" class="form-control" required
+            name="empno" [(ngModel)]="employee.empno"/>
+    </div>
+
+    <div class="form-group">
+        <label>Enter name</label>
+        <input type="text" class="form-control"
+            required
+            name="name" [(ngModel)]="employee.name"
+            #name="ngModel"/>
+        <div [hidden]="name.valid || name.pristine"
+            class="alert alert-danger">Name is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Enter salary</label>
+        <input type="number" class="form-control" required 
+            name="salary" [(ngModel)]="employee.salary"/>
+    </div>
+
+    
+    <div class="form-group">
+        <label>Enter date of joining</label>
+        <input type="date" class="form-control" required
+            name="dateOfJoining" [(ngModel)]="employee.dateOfJoining"/>
+    </div>
+
+    <div class="form-group">
+        <label>Select department</label>
+        <select class="form-control" required
+            name="department" [(ngModel)]="employee.department">
+            <!--<option value="IT">IT</option>
+            <option value="HR">HR</option>
+            <option value="Admin">Admin</option> -->
+            <option *ngFor="let d of departments" value="{{ d }}">{{ d }}
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-success">Add</button> 
+</form>
+</div>
