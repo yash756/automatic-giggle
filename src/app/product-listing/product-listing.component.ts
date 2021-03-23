@@ -30,7 +30,7 @@ export class ProductListingComponent implements OnInit {
     for (let p of this.products){
       if ( p.id == id){
         console.log(p)
-        this.text = "Added successfully to cart"
+        this.text = "Added successfully to shopping cart"
       }
     }
     
